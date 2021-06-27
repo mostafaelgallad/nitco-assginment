@@ -1,0 +1,134 @@
+<div class="card">
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <div>
+        <button (click)="addFieldValue()" class="btn btn-primary">
+          Add coloumns
+        </button>
+        <button (click)="saveJournalEntryData()" class="btn btn-success">
+          Save
+        </button>
+        <h4>debit value {{ Debit }}</h4>
+        <h4>creditor value {{ Creditor }}</h4>
+      </div>
+      <div class="tabel-scroll">
+        <table id="tableID" class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">مدين</th>
+              <th scope="col">دائن</th>
+              <th scope="col">رقم الحساب</th>
+              <th scope="col">اسم الحساب</th>
+              <th scope="col">البيان</th>
+              <th scope="col">البائع</th>
+              <th scope="col">حذف</th>
+              <th scope="col" hidden>ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let field of rowCount; let i = index">
+              <td>
+                <input
+                  class="form-control form-control-sm"
+                  type="number"
+                  placeholder="مدين"
+                  id="Debit_{{ i }}"
+                />
+                <span class="span_missing Debit_span_{{ i }}"
+                  >يجب ادخال القيمه المدينه او الدائنه</span
+                >
+              </td>
+              <td>
+                <input
+                  class="form-control form-control-sm"
+                  type="number"
+                  placeholder="دائن"
+                  id="Creditor_{{ i }}"
+                />
+                <span class="span_missing Creditor_span_{{ i }}"
+                  >يجب ادخال القيمه المدينه او الدائنه</span
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  list="autocomplete-accountsNumber"
+                  id="accountNumber_{{ i }}"
+                />
+                <span class="span_missing accountNumber_span_{{ i }}"
+                  >يجب اختيار رقم الحساب</span
+                >
+              </td>
+              <td>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  placeholder="اسم الحساب"
+                  list="autocomplete-accountsNameAR"
+                  id="accountName_{{ i }}"
+                />
+                <span class="span_missing accountName_span_{{ i }}"
+                  >يجب اختيار اسم الحساب</span
+                >
+              </td>
+              <td>
+                <textarea
+                  class="form-control form-control-md"
+                  type="text"
+                  placeholder="البيان"
+                  id="description_{{ i }}"
+                  rows="1"
+                ></textarea>
+              </td>
+              <td>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  placeholder="البائع"
+                  id="seller_{{ i }}"
+                />
+              </td>
+              <td>
+                <button
+                  class="m-1 btn btn-light btn-outline-danger"
+                  id="btn_delete_{{ i }}"
+                  (click)="deleteFieldValue(i)"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-trash"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td hidden id="rowID_{{ i }}">{{ i }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </blockquote>
+  </div>
+</div>
+<datalist id="autocomplete-accountsNumber">
+  <option *ngFor="let item of autoCompeleteData" [value]="item.Number">
+    {{ item.Number }}
+  </option>
+</datalist>
+
+<datalist id="autocomplete-accountsNameAR">
+  <option *ngFor="let item of autoCompeleteData" [value]="item.NameAR">
+    {{ item.NameAR }}
+  </option>
+</datalist>

@@ -1,0 +1,12 @@
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\bin\Debug\NitcotekAssignmentEntity.dll.config
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\bin\Debug\NitcotekAssignmentEntity.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\bin\Debug\NitcotekAssignmentEntity.pdb
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\bin\Debug\EntityFramework.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\bin\Debug\EntityFramework.xml
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\obj\Debug\NitcotekAssignmentEntity.csproj.AssemblyReference.cache
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\obj\Debug\NitcotekAssignmentEntity.csproj.CoreCompileInputs.cache
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\obj\Debug\NitcotekAssignmentEntity.csproj.CopyComplete
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\obj\Debug\NitcotekAssignmentEntity.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentEntity\obj\Debug\NitcotekAssignmentEntity.pdb

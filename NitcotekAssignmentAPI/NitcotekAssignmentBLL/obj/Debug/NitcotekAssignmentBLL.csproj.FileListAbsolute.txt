@@ -1,0 +1,15 @@
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\bin\Debug\NitcotekAssignmentBLL.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\bin\Debug\NitcotekAssignmentBLL.pdb
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\bin\Debug\NitcotekAssignmentDAL.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\bin\Debug\NitcotekAssignmentEntity.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\bin\Debug\EntityFramework.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\bin\Debug\NitcotekAssignmentDAL.pdb
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\bin\Debug\NitcotekAssignmentDAL.dll.config
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\bin\Debug\NitcotekAssignmentEntity.pdb
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\bin\Debug\NitcotekAssignmentEntity.dll.config
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\bin\Debug\EntityFramework.xml
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\obj\Debug\NitcotekAssignmentBLL.csproj.AssemblyReference.cache
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\obj\Debug\NitcotekAssignmentBLL.csproj.CoreCompileInputs.cache
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\obj\Debug\NitcotekAssignmentBLL.csproj.CopyComplete
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\obj\Debug\NitcotekAssignmentBLL.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentBLL\obj\Debug\NitcotekAssignmentBLL.pdb

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fCarePlusModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountsChart">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NameAR" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="NameEN" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FK_Transaction_Type_ID" Type="smallint" Nullable="false" />
+    <Property Name="Allow_Entry" Type="bit" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="User_ID" Type="bigint" Nullable="false" />
+    <Property Name="Creation_Date" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Parent_ID" Type="uniqueidentifier" />
+    <Property Name="Parent_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Chart_Level_Depth" Type="smallint" Nullable="false" />
+    <Property Name="FK_Cost_Center_Type_ID" Type="smallint" />
+    <Property Name="Branch_ID" Type="bigint" Nullable="false" />
+    <Property Name="Org_ID" Type="bigint" Nullable="false" />
+    <Property Name="FK_Work_Fields_ID" Type="uniqueidentifier" />
+    <Property Name="noOfChilds" Type="smallint" />
+  </EntityType>
+  <EntityType Name="JournalDetails">
+    <Key>
+      <PropertyRef Name="JournalDetailsID" />
+    </Key>
+    <Property Name="JournalDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_JournalHeadrer_ID" Type="int" />
+    <Property Name="Creditor" Type="int" />
+    <Property Name="Debit" Type="int" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Seller" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JournalHeader">
+    <Key>
+      <PropertyRef Name="JournalHeadrerID" />
+    </Key>
+    <Property Name="JournalHeadrerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOfEntry" Type="datetime" />
+    <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_JournalDetails_JournalHeader">
+    <End Role="JournalHeader" Type="Self.JournalHeader" Multiplicity="0..1" />
+    <End Role="JournalDetails" Type="Self.JournalDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JournalHeader">
+        <PropertyRef Name="JournalHeadrerID" />
+      </Principal>
+      <Dependent Role="JournalDetails">
+        <PropertyRef Name="FK_JournalHeadrer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="fCarePlusModelStoreContainer">
+    <EntitySet Name="AccountsChart" EntityType="Self.AccountsChart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JournalDetails" EntityType="Self.JournalDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JournalHeader" EntityType="Self.JournalHeader" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_JournalDetails_JournalHeader" Association="Self.FK_JournalDetails_JournalHeader">
+      <End Role="JournalHeader" EntitySet="JournalHeader" />
+      <End Role="JournalDetails" EntitySet="JournalDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

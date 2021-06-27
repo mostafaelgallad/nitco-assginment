@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fCarePlusModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AccountsChart">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="NameAR" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NameEN" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FK_Transaction_Type_ID" Type="Int16" Nullable="false" />
+    <Property Name="Allow_Entry" Type="Boolean" Nullable="false" />
+    <Property Name="Is_Active" Type="Boolean" Nullable="false" />
+    <Property Name="User_ID" Type="Int64" Nullable="false" />
+    <Property Name="Creation_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Parent_ID" Type="Guid" />
+    <Property Name="Parent_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Chart_Level_Depth" Type="Int16" Nullable="false" />
+    <Property Name="FK_Cost_Center_Type_ID" Type="Int16" />
+    <Property Name="Branch_ID" Type="Int64" Nullable="false" />
+    <Property Name="Org_ID" Type="Int64" Nullable="false" />
+    <Property Name="FK_Work_Fields_ID" Type="Guid" />
+    <Property Name="noOfChilds" Type="Int16" />
+  </EntityType>
+  <EntityContainer Name="fCarePlusEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccountsCharts" EntityType="Self.AccountsChart" />
+    <EntitySet Name="JournalDetails" EntityType="fCarePlusModel.JournalDetail" />
+    <EntitySet Name="JournalHeaders" EntityType="fCarePlusModel.JournalHeader" />
+    <AssociationSet Name="FK_JournalDetails_JournalHeader" Association="fCarePlusModel.FK_JournalDetails_JournalHeader">
+      <End Role="JournalHeader" EntitySet="JournalHeaders" />
+      <End Role="JournalDetail" EntitySet="JournalDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="JournalDetail">
+    <Key>
+      <PropertyRef Name="JournalDetailsID" />
+    </Key>
+    <Property Name="JournalDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_JournalHeadrer_ID" Type="Int32" />
+    <Property Name="Creditor" Type="Int32" />
+    <Property Name="Debit" Type="Int32" />
+    <Property Name="AccountNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AccountName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Seller" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="JournalHeader" Relationship="fCarePlusModel.FK_JournalDetails_JournalHeader" FromRole="JournalDetail" ToRole="JournalHeader" />
+  </EntityType>
+  <EntityType Name="JournalHeader">
+    <Key>
+      <PropertyRef Name="JournalHeadrerID" />
+    </Key>
+    <Property Name="JournalHeadrerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateOfEntry" Type="DateTime" Precision="3" />
+    <Property Name="ReferenceNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="JournalDetails" Relationship="fCarePlusModel.FK_JournalDetails_JournalHeader" FromRole="JournalHeader" ToRole="JournalDetail" />
+  </EntityType>
+  <Association Name="FK_JournalDetails_JournalHeader">
+    <End Type="fCarePlusModel.JournalHeader" Role="JournalHeader" Multiplicity="0..1" />
+    <End Type="fCarePlusModel.JournalDetail" Role="JournalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JournalHeader">
+        <PropertyRef Name="JournalHeadrerID" />
+      </Principal>
+      <Dependent Role="JournalDetail">
+        <PropertyRef Name="FK_JournalHeadrer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

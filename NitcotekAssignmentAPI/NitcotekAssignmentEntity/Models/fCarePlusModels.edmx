@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="fCarePlusModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountsChart">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NameAR" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="NameEN" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Number" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FK_Transaction_Type_ID" Type="smallint" Nullable="false" />
+          <Property Name="Allow_Entry" Type="bit" Nullable="false" />
+          <Property Name="Is_Active" Type="bit" Nullable="false" />
+          <Property Name="User_ID" Type="bigint" Nullable="false" />
+          <Property Name="Creation_Date" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Parent_ID" Type="uniqueidentifier" />
+          <Property Name="Parent_Number" Type="varchar" MaxLength="50" />
+          <Property Name="Chart_Level_Depth" Type="smallint" Nullable="false" />
+          <Property Name="FK_Cost_Center_Type_ID" Type="smallint" />
+          <Property Name="Branch_ID" Type="bigint" Nullable="false" />
+          <Property Name="Org_ID" Type="bigint" Nullable="false" />
+          <Property Name="FK_Work_Fields_ID" Type="uniqueidentifier" />
+          <Property Name="noOfChilds" Type="smallint" />
+        </EntityType>
+        <EntityType Name="JournalDetails">
+          <Key>
+            <PropertyRef Name="JournalDetailsID" />
+          </Key>
+          <Property Name="JournalDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_JournalHeadrer_ID" Type="int" />
+          <Property Name="Creditor" Type="int" />
+          <Property Name="Debit" Type="int" />
+          <Property Name="AccountNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="AccountName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Seller" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JournalHeader">
+          <Key>
+            <PropertyRef Name="JournalHeadrerID" />
+          </Key>
+          <Property Name="JournalHeadrerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateOfEntry" Type="datetime" />
+          <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_JournalDetails_JournalHeader">
+          <End Role="JournalHeader" Type="Self.JournalHeader" Multiplicity="0..1" />
+          <End Role="JournalDetails" Type="Self.JournalDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JournalHeader">
+              <PropertyRef Name="JournalHeadrerID" />
+            </Principal>
+            <Dependent Role="JournalDetails">
+              <PropertyRef Name="FK_JournalHeadrer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="fCarePlusModelStoreContainer">
+          <EntitySet Name="AccountsChart" EntityType="Self.AccountsChart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JournalDetails" EntityType="Self.JournalDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JournalHeader" EntityType="Self.JournalHeader" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_JournalDetails_JournalHeader" Association="Self.FK_JournalDetails_JournalHeader">
+            <End Role="JournalHeader" EntitySet="JournalHeader" />
+            <End Role="JournalDetails" EntitySet="JournalDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="fCarePlusModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AccountsChart">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="NameAR" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameEN" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FK_Transaction_Type_ID" Type="Int16" Nullable="false" />
+          <Property Name="Allow_Entry" Type="Boolean" Nullable="false" />
+          <Property Name="Is_Active" Type="Boolean" Nullable="false" />
+          <Property Name="User_ID" Type="Int64" Nullable="false" />
+          <Property Name="Creation_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Parent_ID" Type="Guid" />
+          <Property Name="Parent_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Chart_Level_Depth" Type="Int16" Nullable="false" />
+          <Property Name="FK_Cost_Center_Type_ID" Type="Int16" />
+          <Property Name="Branch_ID" Type="Int64" Nullable="false" />
+          <Property Name="Org_ID" Type="Int64" Nullable="false" />
+          <Property Name="FK_Work_Fields_ID" Type="Guid" />
+          <Property Name="noOfChilds" Type="Int16" />
+        </EntityType>
+        <EntityContainer Name="fCarePlusEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountsCharts" EntityType="Self.AccountsChart" />
+          <EntitySet Name="JournalDetails" EntityType="fCarePlusModel.JournalDetail" />
+          <EntitySet Name="JournalHeaders" EntityType="fCarePlusModel.JournalHeader" />
+          <AssociationSet Name="FK_JournalDetails_JournalHeader" Association="fCarePlusModel.FK_JournalDetails_JournalHeader">
+            <End Role="JournalHeader" EntitySet="JournalHeaders" />
+            <End Role="JournalDetail" EntitySet="JournalDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="JournalDetail">
+          <Key>
+            <PropertyRef Name="JournalDetailsID" />
+          </Key>
+          <Property Name="JournalDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_JournalHeadrer_ID" Type="Int32" />
+          <Property Name="Creditor" Type="Int32" />
+          <Property Name="Debit" Type="Int32" />
+          <Property Name="AccountNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AccountName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Seller" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="JournalHeader" Relationship="fCarePlusModel.FK_JournalDetails_JournalHeader" FromRole="JournalDetail" ToRole="JournalHeader" />
+        </EntityType>
+        <EntityType Name="JournalHeader">
+          <Key>
+            <PropertyRef Name="JournalHeadrerID" />
+          </Key>
+          <Property Name="JournalHeadrerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOfEntry" Type="DateTime" Precision="3" />
+          <Property Name="ReferenceNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="JournalDetails" Relationship="fCarePlusModel.FK_JournalDetails_JournalHeader" FromRole="JournalHeader" ToRole="JournalDetail" />
+        </EntityType>
+        <Association Name="FK_JournalDetails_JournalHeader">
+          <End Type="fCarePlusModel.JournalHeader" Role="JournalHeader" Multiplicity="0..1" />
+          <End Type="fCarePlusModel.JournalDetail" Role="JournalDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JournalHeader">
+              <PropertyRef Name="JournalHeadrerID" />
+            </Principal>
+            <Dependent Role="JournalDetail">
+              <PropertyRef Name="FK_JournalHeadrer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="fCarePlusModelStoreContainer" CdmEntityContainer="fCarePlusEntities">
+          <EntitySetMapping Name="AccountsCharts">
+            <EntityTypeMapping TypeName="fCarePlusModel.AccountsChart">
+              <MappingFragment StoreEntitySet="AccountsChart">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameAR" ColumnName="NameAR" />
+                <ScalarProperty Name="NameEN" ColumnName="NameEN" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="FK_Transaction_Type_ID" ColumnName="FK_Transaction_Type_ID" />
+                <ScalarProperty Name="Allow_Entry" ColumnName="Allow_Entry" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+                <ScalarProperty Name="Parent_Number" ColumnName="Parent_Number" />
+                <ScalarProperty Name="Chart_Level_Depth" ColumnName="Chart_Level_Depth" />
+                <ScalarProperty Name="FK_Cost_Center_Type_ID" ColumnName="FK_Cost_Center_Type_ID" />
+                <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
+                <ScalarProperty Name="Org_ID" ColumnName="Org_ID" />
+                <ScalarProperty Name="FK_Work_Fields_ID" ColumnName="FK_Work_Fields_ID" />
+                <ScalarProperty Name="noOfChilds" ColumnName="noOfChilds" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JournalDetails">
+            <EntityTypeMapping TypeName="fCarePlusModel.JournalDetail">
+              <MappingFragment StoreEntitySet="JournalDetails">
+                <ScalarProperty Name="Seller" ColumnName="Seller" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="Creditor" ColumnName="Creditor" />
+                <ScalarProperty Name="FK_JournalHeadrer_ID" ColumnName="FK_JournalHeadrer_ID" />
+                <ScalarProperty Name="JournalDetailsID" ColumnName="JournalDetailsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JournalHeaders">
+            <EntityTypeMapping TypeName="fCarePlusModel.JournalHeader">
+              <MappingFragment StoreEntitySet="JournalHeader">
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+                <ScalarProperty Name="DateOfEntry" ColumnName="DateOfEntry" />
+                <ScalarProperty Name="JournalHeadrerID" ColumnName="JournalHeadrerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

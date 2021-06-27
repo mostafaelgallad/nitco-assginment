@@ -1,0 +1,9 @@
+.tabel-scroll {
+  height: 20em;
+  overflow-y: scroll;
+}
+.span_missing {
+  color: red;
+  font-size: 12px;
+  display: none;
+}

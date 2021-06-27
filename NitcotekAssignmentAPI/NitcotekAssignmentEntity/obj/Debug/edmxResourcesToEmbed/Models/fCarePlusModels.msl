@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="fCarePlusModelStoreContainer" CdmEntityContainer="fCarePlusEntities">
+    <EntitySetMapping Name="AccountsCharts">
+      <EntityTypeMapping TypeName="fCarePlusModel.AccountsChart">
+        <MappingFragment StoreEntitySet="AccountsChart">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameAR" ColumnName="NameAR" />
+          <ScalarProperty Name="NameEN" ColumnName="NameEN" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="FK_Transaction_Type_ID" ColumnName="FK_Transaction_Type_ID" />
+          <ScalarProperty Name="Allow_Entry" ColumnName="Allow_Entry" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="Parent_Number" ColumnName="Parent_Number" />
+          <ScalarProperty Name="Chart_Level_Depth" ColumnName="Chart_Level_Depth" />
+          <ScalarProperty Name="FK_Cost_Center_Type_ID" ColumnName="FK_Cost_Center_Type_ID" />
+          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
+          <ScalarProperty Name="Org_ID" ColumnName="Org_ID" />
+          <ScalarProperty Name="FK_Work_Fields_ID" ColumnName="FK_Work_Fields_ID" />
+          <ScalarProperty Name="noOfChilds" ColumnName="noOfChilds" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JournalDetails">
+      <EntityTypeMapping TypeName="fCarePlusModel.JournalDetail">
+        <MappingFragment StoreEntitySet="JournalDetails">
+          <ScalarProperty Name="Seller" ColumnName="Seller" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Creditor" ColumnName="Creditor" />
+          <ScalarProperty Name="FK_JournalHeadrer_ID" ColumnName="FK_JournalHeadrer_ID" />
+          <ScalarProperty Name="JournalDetailsID" ColumnName="JournalDetailsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JournalHeaders">
+      <EntityTypeMapping TypeName="fCarePlusModel.JournalHeader">
+        <MappingFragment StoreEntitySet="JournalHeader">
+          <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+          <ScalarProperty Name="DateOfEntry" ColumnName="DateOfEntry" />
+          <ScalarProperty Name="JournalHeadrerID" ColumnName="JournalHeadrerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

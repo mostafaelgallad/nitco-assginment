@@ -1,0 +1,15 @@
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\bin\Debug\NitcotekAssignmentDAL.dll.config
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\bin\Debug\NitcotekAssignmentDAL.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\bin\Debug\NitcotekAssignmentDAL.pdb
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\bin\Debug\EntityFramework.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\bin\Debug\NitcotekAssignmentEntity.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\bin\Debug\NitcotekAssignmentEntity.pdb
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\bin\Debug\NitcotekAssignmentEntity.dll.config
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\bin\Debug\EntityFramework.xml
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\obj\Debug\NitcotekAssignmentDAL.csproj.AssemblyReference.cache
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\obj\Debug\NitcotekAssignmentDAL.csproj.CoreCompileInputs.cache
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\obj\Debug\NitcotekAssignmentDAL.csproj.CopyComplete
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\obj\Debug\NitcotekAssignmentDAL.dll
+C:\Users\melga\OneDrive\Desktop\NitcotekAssignment\NitcotekAssignmentAPI\NitcotekAssignmentDAL\obj\Debug\NitcotekAssignmentDAL.pdb
